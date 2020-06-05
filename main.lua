@@ -1,9 +1,6 @@
 
 function love.load()
-    font = love.graphics.newFont(32)
     require("menu")
-
-
 
     table.insert(menu.buttons, newButton("Start Game", function() print("Starting Gameing") end))
     table.insert(menu.buttons, newButton("Load Game", function() print("Load Game") end))

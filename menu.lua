@@ -1,4 +1,5 @@
 menu = {} 
+menu.font = love.graphics.newFont(32)
 menu.buttonssettings = {}
 menu.buttonssettings.HEIGHT = 64
 menu.buttonssettings.WIDTH =  love.graphics.getWidth()  * (1/3)
@@ -16,7 +17,7 @@ function DrawMenu()
         love.graphics.setColor(unpack(button.currentColor))
         love.graphics.rectangle("fill", button.x, button.y, menu.buttonssettings.WIDTH, menu.buttonssettings.HEIGHT)
         love.graphics.setColor(0,0,0,1)
-        love.graphics.print(button.text, font,(menu.WINDOW.WIDTH * 0.5) - button.textW * 0.5,(button.y + button.textH * 0.5 ) )
+        love.graphics.print(button.text, menu.font,(menu.WINDOW.WIDTH * 0.5) - button.textW * 0.5,(button.y + button.textH * 0.5 ) )
      end 
 end 
 
@@ -49,7 +50,7 @@ function newButton(text,fn)
         x = 0, 
         y = 0, 
         isHovering = false,
-        textW = font:getWidth(text),
-        textH = font:getHeight(text)
+        textW = menu.font:getWidth(text),
+        textH = menu.font:getHeight(text)
     }
 end 
